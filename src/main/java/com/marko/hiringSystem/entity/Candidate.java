@@ -13,6 +13,9 @@ public class Candidate {
     private String lastName;
     private int age;
 
+    @Enumerated(EnumType.STRING)
+    private CandidateStatus status;
+
     public Candidate() {
 
     }
@@ -21,6 +24,7 @@ public class Candidate {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.status = CandidateStatus.CV_REVIEW;
     }
 
     public long getId() {
@@ -49,5 +53,13 @@ public class Candidate {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public CandidateStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(CandidateStatus status) {
+        this.status = status;
     }
 }
